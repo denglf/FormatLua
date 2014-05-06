@@ -20,7 +20,7 @@ Setting lua path in FormatLua.sublime-settings
 Add the following line to keymap settings
 
 ```json
-{ "keys": ["super+k", "super+l"], "command": "format_lua" },
+{ "keys": ["super+k", "super+l"], "command": "format_lua" }
 ```
 
 ## Example
@@ -30,18 +30,24 @@ Original:
 ```lua
 local a = "你好"
     local b
-    function a()
-        return a
-            end
-return b
+    function set_text(name, value)
+            local doc = document:getElementsByName(name)
+        if doc and #doc > 0 then
+        doc[1]:setPropertyByName("text", value)
+    end
+    end
+    return b
 ```
 Formated:
 
 ```lua
 local a = "你好"
 local b
-function a()
-    return a
+function set_text(name, value)
+    local doc = document:getElementsByName(name)
+    if doc and #doc > 0 then
+        doc[1]:setPropertyByName("text", value)
+    end
 end
 return b
 ```
