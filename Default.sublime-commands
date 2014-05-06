@@ -1,0 +1,7 @@
+[
+    {
+        "caption": "FormatLua: Format Lua code",
+        "command": "format_lua"
+    }
+]
+
