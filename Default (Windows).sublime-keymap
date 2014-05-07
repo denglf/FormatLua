@@ -1,0 +1,3 @@
+[
+    { "keys": ["ctrl+k", "ctrl+l"], "command": "format_lua" }
+]

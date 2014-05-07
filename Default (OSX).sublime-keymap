@@ -1,0 +1,3 @@
+[
+	{ "keys": ["super+k", "super+l"], "command": "format_lua" }
+]

@@ -5,7 +5,8 @@ FormatLua formats lua code to a more readable form by using [Lua Development Too
 
 ## How to Use
 
-Select lua and click menu Selection -> Format -> Format Lua Code
+* Select lua code and click menu Selection -> Format -> Format Lua Code
+* Select lua code and press super+k, super+l
 
 ### Configure setting
 Setting lua path in FormatLua.sublime-settings
