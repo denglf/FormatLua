@@ -3,6 +3,7 @@ import subprocess
 import sublime
 import sublime_plugin
 import re
+import zipfile
 from os.path import basename
 from os.path import join
 
