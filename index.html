@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Formatlua by denglf</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Formatlua</h1>
+        <h2>Formatting lua to a more readable form by using Lua Development Tools library.</h2>
+        <a href="https://github.com/denglf/FormatLua" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
+<a name="summary" class="anchor" href="#summary"><span class="octicon octicon-link"></span></a>Summary</h2>
+
+<p>FormatLua formats lua code to a more readable form by using <a href="https://github.com/eclipse/koneki.ldt/tree/master/libraries">Lua Development Tools library</a>.</p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to Use</h2>
+
+<ul>
+<li>Select lua code and click menu Selection -&gt; Format -&gt; Format Lua Code</li>
+<li>Select lua code and press alt+l</li>
+</ul><h3>
+<a name="configure-setting" class="anchor" href="#configure-setting"><span class="octicon octicon-link"></span></a>Configure setting</h3>
+
+<p>Setting lua path in FormatLua.sublime-settings</p>
+
+<div class="highlight highlight-json"><pre><span class="p">{</span>
+    <span class="nt">"lua_path"</span><span class="p">:</span> <span class="s2">"/usr/local/bin/lua"</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>
+<a name="configure-key-binding" class="anchor" href="#configure-key-binding"><span class="octicon octicon-link"></span></a>Configure key binding</h3>
+
+<p>Add the following line to keymap settings</p>
+
+<div class="highlight highlight-json"><pre><span class="p">{</span> <span class="nt">"keys"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"alt+l"</span><span class="p">],</span> <span class="nt">"command"</span><span class="p">:</span> <span class="s2">"format_lua"</span> <span class="p">}</span>
+</pre></div>
+
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<p>Original:</p>
+
+<div class="highlight highlight-lua"><pre><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">"</span><span class="s">你好"</span>
+    <span class="kd">local</span> <span class="n">b</span>
+    <span class="k">function</span> <span class="nf">set_text</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="kd">local</span> <span class="n">doc</span> <span class="o">=</span> <span class="n">document</span><span class="p">:</span><span class="n">getElementsByName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">doc</span> <span class="ow">and</span> <span class="o">#</span><span class="n">doc</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">then</span>
+        <span class="n">doc</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">setPropertyByName</span><span class="p">(</span><span class="s2">"</span><span class="s">text"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="n">b</span>
+</pre></div>
+
+<p>Formated:</p>
+
+<div class="highlight highlight-lua"><pre><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">"</span><span class="s">你好"</span>
+<span class="kd">local</span> <span class="n">b</span>
+<span class="k">function</span> <span class="nf">set_text</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">doc</span> <span class="o">=</span> <span class="n">document</span><span class="p">:</span><span class="n">getElementsByName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">doc</span> <span class="ow">and</span> <span class="o">#</span><span class="n">doc</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">then</span>
+        <span class="n">doc</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">setPropertyByName</span><span class="p">(</span><span class="s2">"</span><span class="s">text"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="k">return</span> <span class="n">b</span>
+</pre></div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/denglf/FormatLua/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/denglf/FormatLua/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/denglf/FormatLua"></a> is maintained by <a href="https://github.com/denglf">denglf</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
