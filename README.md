@@ -6,7 +6,7 @@ FormatLua formats lua code to a more readable form by using [Lua Development Too
 ## How to Use
 
 * Select lua code and click menu Selection -> Format -> Format Lua Code
-* Select lua code and press super+k, super+l
+* Select lua code and press alt+l
 
 ### Configure setting
 Setting lua path in FormatLua.sublime-settings
@@ -21,7 +21,7 @@ Setting lua path in FormatLua.sublime-settings
 Add the following line to keymap settings
 
 ```json
-{ "keys": ["super+k", "super+l"], "command": "format_lua" }
+{ "keys": ["alt+l"], "command": "format_lua" }
 ```
 
 ## Example
