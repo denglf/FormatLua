@@ -24,6 +24,11 @@ Add the following line to keymap settings
 { "keys": ["super+k", "super+l"], "command": "format_lua" }
 ```
 
+## Support for Sublime Text 3
+* Install FormatLua from Package Control.
+* Open `Installed Packages` directory, copy `FormatLua.sublime-package` to `Packages` directory and rename to `FormatLua.zip`.
+* Unzip `FormatLua.zip` to `Packages` and remove `FormatLua.zip`.
+
 ## Example
 
 Original:
