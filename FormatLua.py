@@ -32,7 +32,7 @@ class FormatLuaCommand(sublime_plugin.TextCommand):
 		packages_path = join(sublime.packages_path(), "FormatLua")
 		os.chdir(packages_path)
 		tmp = 'tmp.lua'
-		fileHandle = open(tmp, 'w')
+		fileHandle = open(tmp, 'wb')
 		fileHandle.write(s)
 		fileHandle.close()
 		settings = sublime.load_settings('FormatLua.sublime-settings')
