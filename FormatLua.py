@@ -6,6 +6,20 @@ import re
 from os.path import basename
 from os.path import join
 
+def plugin_loaded():
+    package = "FormatLua"
+    if VERSION >= 3006:
+        package_location = os.path.join(sublime.installed_packages_path(), package + ".sublime-package")
+        if not os.path.exists(package_location):
+            package_location = os.path.join(os.path.dirname(sublime.executable_path()), "Packages", package + ".sublime-package")
+            if not os.path.exists(package_location):
+                package_location = None
+        extract_location = os.path.join(sublime.packages_path(), package)
+        if os.path.exists(package_location):
+            if package_location:
+                with zipfile.ZipFile(package_location) as zip_file:
+                    zip_file.extractall(extract_location)
+
 class FormatLuaCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         view = self.view
@@ -43,17 +57,3 @@ class FormatLuaCommand(sublime_plugin.TextCommand):
         sourcecode = p.stdout.read()
         os.remove(tmp)
         return sourcecode.decode('utf-8')
-
-    def plugin_loaded():
-        package = "FormatLua"
-        if VERSION >= 3006:
-            package_location = os.path.join(sublime.installed_packages_path(), package + ".sublime-package")
-            if not os.path.exists(package_location):
-                package_location = os.path.join(os.path.dirname(sublime.executable_path()), "Packages", package + ".sublime-package")
-                if not os.path.exists(package_location):
-                    package_location = None
-            extract_location = os.path.join(sublime.packages_path(), package)
-            if os.path.exists(package_location):
-                if package_location:
-                    with zipfile.ZipFile(package_location) as zip_file:
-                        zip_file.extractall(extract_location)
