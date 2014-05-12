@@ -13,13 +13,9 @@ package = "FormatLua"
 def plugin_loaded():
     if version >= 3006:
         package_location = os.path.join(sublime.installed_packages_path(), package + ".sublime-package")
-        if not os.path.exists(package_location):
-            package_location = os.path.join(os.path.dirname(sublime.executable_path()), "Packages", package + ".sublime-package")
-            if not os.path.exists(package_location):
-                package_location = None
         extract_location = os.path.join(sublime.packages_path(), package)
         if os.path.exists(package_location):
-            if package_location:
+            if not os.path.exists(extract_location):
                 with zipfile.ZipFile(package_location) as zip_file:
                     zip_file.extractall(extract_location)
 
