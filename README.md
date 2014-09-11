@@ -2,9 +2,14 @@
 
 FormatLua formats lua code to a more readable form by using [Lua Development Tools library](https://github.com/eclipse/koneki.ldt/tree/master/libraries).
 
+## Require
+* Lua
+
+## Support System
+* MacOSX
+* Linux
 
 ## How to Use
-
 * Select lua code and click menu Selection -> Format -> Format Lua Code
 * Select lua code and press alt+l
 
@@ -17,7 +22,6 @@ Setting lua path in FormatLua.sublime-settings
 }
 ```
 ### Configure key binding
-
 Add the following line to keymap settings
 
 ```json
@@ -25,7 +29,6 @@ Add the following line to keymap settings
 ```
 
 ## Example
-
 Original:
 
 ```lua
