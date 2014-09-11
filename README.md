@@ -13,7 +13,7 @@ FormatLua formats lua code to a more readable form by using [Lua Development Too
 * Select lua code and click menu Selection -> Format -> Format Lua Code
 * Select lua code and press alt+l
 
-### Configure setting
+### Configure Setting
 Setting lua path in FormatLua.sublime-settings
 
 ```json
@@ -21,7 +21,7 @@ Setting lua path in FormatLua.sublime-settings
     "lua_path": "/usr/local/bin/lua"
 }
 ```
-### Configure key binding
+### Configure Key Binding
 Add the following line to keymap settings
 
 ```json
